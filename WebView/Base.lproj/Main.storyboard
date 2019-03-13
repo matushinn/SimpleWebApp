@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPL-bT-0Es">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="p64-s5-y1O">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Wlh-oo-aiR"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYc-xb-s2x">
+                                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="KJK-dr-kov"/>
+                                        </constraints>
+                                        <items>
+                                            <barButtonItem title="Item" image="button-back.png" id="jjV-jJ-94H">
+                                                <connections>
+                                                    <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="L67-G1-iL0"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="4B3-3T-9KQ"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="eDa-ar-Y88"/>
+                                            <barButtonItem style="plain" id="enW-zt-2Ls">
+                                                <view key="customView" contentMode="scaleToFill" id="PAT-ci-qJa">
+                                                    <rect key="frame" x="205.5" y="5.5" width="33" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="i3K-Pv-kfS">
+                                                            <rect key="frame" x="6.5" y="6.5" width="20" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </activityIndicatorView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="lHn-oA-8aU"/>
+                                            <barButtonItem systemItem="refresh" id="TiG-Yy-NyL">
+                                                <connections>
+                                                    <action selector="reloadButtonTapped:" destination="BYZ-38-t0r" id="l8f-y5-IiJ"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="stop" id="XhY-A8-8fb">
+                                                <connections>
+                                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" id="wZn-f2-YY0"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-FY-ziE">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </webView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="p64-s5-y1O" firstAttribute="leading" secondItem="bPL-bT-0Es" secondAttribute="leading" id="0X4-62-aob"/>
+                                    <constraint firstAttribute="trailing" secondItem="IYc-xb-s2x" secondAttribute="trailing" id="9Gb-PP-acn"/>
+                                    <constraint firstItem="E4b-FY-ziE" firstAttribute="top" secondItem="p64-s5-y1O" secondAttribute="bottom" id="LN4-8T-rgt"/>
+                                    <constraint firstAttribute="bottom" secondItem="IYc-xb-s2x" secondAttribute="bottom" id="Ogx-Ar-m9x"/>
+                                    <constraint firstItem="E4b-FY-ziE" firstAttribute="leading" secondItem="bPL-bT-0Es" secondAttribute="leading" id="RWr-3f-sFM"/>
+                                    <constraint firstAttribute="trailing" secondItem="p64-s5-y1O" secondAttribute="trailing" id="aGS-bk-urG"/>
+                                    <constraint firstAttribute="trailing" secondItem="E4b-FY-ziE" secondAttribute="trailing" id="eBv-Ny-6xQ"/>
+                                    <constraint firstItem="p64-s5-y1O" firstAttribute="top" secondItem="bPL-bT-0Es" secondAttribute="top" id="fU3-qe-Aj5"/>
+                                    <constraint firstItem="IYc-xb-s2x" firstAttribute="leading" secondItem="bPL-bT-0Es" secondAttribute="leading" id="uDl-DY-TRk"/>
+                                    <constraint firstItem="IYc-xb-s2x" firstAttribute="top" secondItem="E4b-FY-ziE" secondAttribute="bottom" id="zdh-QW-yWf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bPL-bT-0Es" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FLZ-7Z-k7k"/>
+                            <constraint firstItem="bPL-bT-0Es" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gjm-YO-rI3"/>
+                            <constraint firstItem="bPL-bT-0Es" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mHE-rD-HqC"/>
+                            <constraint firstItem="bPL-bT-0Es" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sgj-lH-Ys9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="i3K-Pv-kfS" id="2wh-Xs-0xV"/>
+                        <outlet property="backButton" destination="jjV-jJ-94H" id="Ia8-RP-oZH"/>
+                        <outlet property="reloadButton" destination="TiG-Yy-NyL" id="HN3-47-jWG"/>
+                        <outlet property="searchBar" destination="p64-s5-y1O" id="6pE-cm-Zr5"/>
+                        <outlet property="stopButton" destination="XhY-A8-8fb" id="p9C-8T-9Eb"/>
+                        <outlet property="webView" destination="E4b-FY-ziE" id="Cbp-da-OVI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button-back.png" width="44" height="44"/>
+    </resources>
+</document>
